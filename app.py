@@ -2587,7 +2587,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 dup_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             dup_status = gr.Textbox(label="Status", interactive=False)
-            dup_preview = gr.Dataframe(label="Preview", height=300)
+            dup_preview = gr.Dataframe(label="Preview")
             
             dup_btn.click(fn=remove_duplicates, inputs=dup_cols, outputs=[dup_status, dup_preview])
             dup_undo_btn.click(fn=undo_last_action, outputs=[dup_status, dup_preview])
@@ -2639,7 +2639,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 dtype_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             dtype_status = gr.Textbox(label="Status", interactive=False)
-            dtype_preview = gr.Dataframe(label="Preview", height=300)
+            dtype_preview = gr.Dataframe(label="Preview")
             
             dtype_btn.click(
                 fn=correct_data_types,
@@ -2669,7 +2669,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 text_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             text_status = gr.Textbox(label="Status", interactive=False)
-            text_preview = gr.Dataframe(label="Preview", height=300)
+            text_preview = gr.Dataframe(label="Preview")
             
             text_btn.click(
                 fn=standardize_text,
@@ -2699,7 +2699,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 scale_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             scale_status = gr.Textbox(label="Status", interactive=False)
-            scale_preview = gr.Dataframe(label="Preview", height=300)
+            scale_preview = gr.Dataframe(label="Preview")
             
             scale_btn.click(
                 fn=scale_normalize,
@@ -2729,7 +2729,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
         with gr.Accordion("1️⃣ Data Overview", open=True):
             understand_btn = gr.Button("📋 Show Complete Data Overview", variant="primary")
             understand_output = gr.Markdown()
-            understand_table = gr.Dataframe(label="Sample Data (First 10 rows)", height=300)
+            understand_table = gr.Dataframe(label="Sample Data (First 10 rows)")
             
             understand_btn.click(
                 fn=understand_data,
@@ -2746,7 +2746,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                     info="Choose which types of columns to analyze"
                 )
             desc_btn = gr.Button("📊 Generate Statistics", variant="primary")
-            desc_output = gr.Dataframe(label="Descriptive Statistics", height=400)
+            desc_output = gr.Dataframe(label="Descriptive Statistics")
             
             desc_btn.click(fn=descriptive_stats, inputs=desc_type, outputs=desc_output)
         
@@ -2898,7 +2898,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 fc_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             fc_status = gr.Textbox(label="Status", interactive=False)
-            fc_preview = gr.Dataframe(label="Preview", height=300)
+            fc_preview = gr.Dataframe(label="Preview")
             
             fc_btn.click(
                 fn=create_feature,
@@ -2928,7 +2928,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 ft_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             ft_status = gr.Textbox(label="Status", interactive=False)
-            ft_preview = gr.Dataframe(label="Preview", height=300)
+            ft_preview = gr.Dataframe(label="Preview")
             
             ft_btn.click(
                 fn=transform_features,
@@ -2958,7 +2958,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 enc_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             enc_status = gr.Textbox(label="Status", interactive=False)
-            enc_preview = gr.Dataframe(label="Preview", height=300)
+            enc_preview = gr.Dataframe(label="Preview")
             
             enc_btn.click(
                 fn=encode_features,
@@ -2984,7 +2984,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 bin_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             bin_status = gr.Textbox(label="Status", interactive=False)
-            bin_preview = gr.Dataframe(label="Preview", height=300)
+            bin_preview = gr.Dataframe(label="Preview")
             
             bin_btn.click(
                 fn=apply_binning,
@@ -3013,7 +3013,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 dr_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             dr_status = gr.Textbox(label="Status", interactive=False)
-            dr_preview = gr.Dataframe(label="Preview", height=300)
+            dr_preview = gr.Dataframe(label="Preview")
             dr_plot = gr.Plot(label="Explained Variance")
             
             dr_btn.click(
@@ -3046,7 +3046,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 poly_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             poly_status = gr.Textbox(label="Status", interactive=False)
-            poly_preview = gr.Dataframe(label="Preview", height=300)
+            poly_preview = gr.Dataframe(label="Preview")
             
             poly_btn.click(
                 fn=create_polynomial,
@@ -3110,8 +3110,8 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 split_btn = gr.Button("✂️ Split Data", variant="primary", size="lg")
             
             split_output = gr.Markdown()
-            split_train_preview = gr.Dataframe(label="Training Set Preview", visible=False, height=200)
-            split_test_preview = gr.Dataframe(label="Test Set Preview", visible=False, height=200)
+            split_train_preview = gr.Dataframe(label="Training Set Preview", visible=False)
+            split_test_preview = gr.Dataframe(label="Test Set Preview", visible=False)
             
             split_btn.click(
                 fn=prepare_data_split,
