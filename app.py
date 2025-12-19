@@ -2801,7 +2801,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                     info="Pearson: linear | Spearman: monotonic | Kendall: ordinal"
                 )
             corr_btn = gr.Button("🔥 Generate Correlation Heatmap", variant="primary")
-            corr_output = gr.Plot(label="Correlation Heatmap", height=600)
+            corr_output = gr.Plot(label="Correlation Heatmap")
             
             corr_btn.click(fn=correlation_matrix, inputs=corr_method, outputs=corr_output)
         
@@ -3180,7 +3180,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 train_btn = gr.Button("🚀 Train Model", variant="primary", size="lg")
             
             train_output = gr.Markdown()
-            train_plot = gr.Plot(label="Training Visualization", height=400)
+            train_plot = gr.Plot(label="Training Visualization")
             train_status = gr.Textbox(label="Training Status", interactive=False)
             
             train_btn.click(
