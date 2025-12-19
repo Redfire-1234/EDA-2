@@ -2504,7 +2504,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
         with gr.Row():
             info_output = gr.Textbox(label="Dataset Info", lines=2, interactive=False)
         
-        table_output = gr.Dataframe(label="Data Preview (First 20 rows)", wrap=True, height=400)
+        table_output = gr.Dataframe(label="Data Preview (First 20 rows)", wrap=True)
     
     # ========================================================================
     # TAB 2: DATA CLEANING
@@ -2563,7 +2563,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 missing_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             missing_status = gr.Textbox(label="Status", interactive=False)
-            missing_preview = gr.Dataframe(label="Preview", height=300)
+            missing_preview = gr.Dataframe(label="Preview")
             
             missing_btn.click(
                 fn=handle_missing_values,
@@ -2615,7 +2615,7 @@ with gr.Blocks(title="Advanced EDA & ML App", theme=gr.themes.Soft()) as app:
                 outlier_undo_btn = gr.Button("↩️ Undo", variant="secondary")
             
             outlier_status = gr.Textbox(label="Status", interactive=False)
-            outlier_preview = gr.Dataframe(label="Preview", height=300)
+            outlier_preview = gr.Dataframe(label="Preview")
             
             outlier_btn.click(
                 fn=handle_outliers,
